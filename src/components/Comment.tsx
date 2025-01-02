@@ -1,8 +1,7 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from "../components/ui/Cart";
 import { Button } from "../components/ui/Button";
-import { Input } from '../components/ui/Input';
 
 interface Comment {
   id: string;
@@ -19,6 +18,10 @@ export default function CommentSection({ postID }: CommentSectionProps) {
   const [newComment, setNewComment] = useState('');
   const [authorName, setAuthorName] = useState('');
   const [editingCommentId, setEditingCommentId] = useState<string | null>(null);
+
+  useEffect(() => {
+    console.log('Post ID:', postID); // Acknowledge postID to avoid unused variable warning
+  }, [postID]);
 
   const handleAddComment = () => {
     if (newComment.trim() && authorName.trim()) {

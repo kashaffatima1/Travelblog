@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import "../../public/images/logoblog.jpg";
-import Work from './Work';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +14,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <img className="h-10 w-9" src="/images/logoblog.jpg" alt="Logo" />
+            <Image className="h-10 w-9" src="/images/logoblog.jpg" alt="Logo" width={36} height={36} />
           </div>
           <div className="hidden sm:flex sm:items-center sm:space-x-4">
             <a href="#" className="hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium">Home</a>
@@ -43,8 +42,6 @@ export default function Navbar() {
       {isOpen && (
         <div className="sm:hidden" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <div className="flex justify-center mb-4">
-            </div>
             <a href="#" className="hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
             <a href="#" className="hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a>
             <a href="#" className="hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
